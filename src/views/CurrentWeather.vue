@@ -11,14 +11,6 @@
             MAST Camera View
           </button>
         </div>
-        <!-- <div class="col">
-          <iframe
-            src="https://mars.nasa.gov/gltf_embed/24584"
-            width="100%"
-            height="450px"
-            frameborder="0"
-          />
-        </div> -->
         <div class="col-3">
           <button
             class="btn btn-primary mx-auto m-1 rounded"
@@ -46,10 +38,14 @@
       </div>
     </div>
   </div>
+  <ImageCards />
 </template>
 
 <script>
+import ImageCards from "@/components/ImageCards.vue";
+
 export default {
+  components: { ImageCards },
   methods: {
     showSomething(msg) {
       alert(msg);
@@ -57,5 +53,3 @@ export default {
   },
 };
 </script>
-
-<style></style>

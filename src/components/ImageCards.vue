@@ -11,8 +11,6 @@
     <div class="card-body">
       <h3 class="card-title">Mars Sol {{ this.sol }}</h3>
       <p class="card-text">{{ this.date }}</p>
-      <p class="card-text">H: {{ this.maxTemp }}</p>
-      <p class="card-text">L: {{ this.minTemp }}</p>
     </div>
   </div>
 </template>
@@ -21,7 +19,7 @@
 import { mapState } from "vuex";
 import axios from "axios";
 export default {
-  name: "DetailView",
+  name: "ImageCards",
   data() {
     return { solNumber: this.sol, urlList: [] };
   },
@@ -45,8 +43,6 @@ export default {
   props: {
     sol: Number,
     date: String,
-    maxTemp: String,
-    minTemp: String,
     imgUrl: String,
   },
 
