@@ -31,7 +31,7 @@ export default {
       .get(
         "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=" +
           this.solNumber +
-          "&camera=fhaz&api_key=" +
+          "&camera=NAVCAM&api_key=" +
           api_key
       )
       .then((res) => {

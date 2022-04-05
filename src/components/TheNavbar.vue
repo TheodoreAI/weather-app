@@ -16,7 +16,7 @@
           role="tab"
           aria-controls="pills-home"
           aria-selected="true"
-          >Home</router-link
+          >Mars Weather</router-link
         >
       </li>
       <li class="nav-item">
@@ -34,7 +34,7 @@
           role="tab"
           aria-controls="pills-about"
           aria-selected="true"
-          >About</router-link
+          >Rover View</router-link
         >
       </li>
     </ul>
