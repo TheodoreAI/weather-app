@@ -10,9 +10,9 @@
     </div>
     <div class="card-body">
       <h3 class="card-title">Mars Sol {{ this.sol }}</h3>
-      <p class="card-text">Earth Date: {{ this.date }}</p>
-      <p class="card-text">Max Temperature (F): {{ this.maxTemp }}</p>
-      <p class="card-text">Min Temperature (F): {{ this.minTemp }}</p>
+      <p class="card-text">{{ this.date }}</p>
+      <p class="card-text">H: {{ this.maxTemp }}</p>
+      <p class="card-text">L: {{ this.minTemp }}</p>
     </div>
   </div>
 </template>
