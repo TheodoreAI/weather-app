@@ -61,11 +61,26 @@ yarn lint
 
 ### Any Issues -
 
-- [ ] ~~Not all sols have images~~
+- [ ] ~~Not all Sols (Martian Days) have images~~
 
 ### What I learned -
 
 - Using the Rover Photos API to pull different types of images from different instruments
+
+### Day 3
+
+### What I will do -
+
+- [ ] Build the Detail View for the cards
+- [ ] Make photo component to render each Instrument category on a column
+  - FHAZ
+  - RHAZ
+  - NAVCAM
+  - MAST
+
+### Any Issues -
+
+### What I learned -
 
 ### Customize configuration
 
