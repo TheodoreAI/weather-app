@@ -36,9 +36,11 @@ yarn lint
 - [x] Download and add Axios to make the API Calls
 - [x] Make sure API keys are stored in an untracked/uncommitted .env file
 - [ ] **Make the weather app sol components is currently in progress**
-- [ ] There are other APIs, so continue with the Mars Image API to add images to the weather sol cards
-- [ ] Use Bootstrap to style the Navbar
 - [ ] ~~Insight Weather API is out of service~~ have to use Mars Curiosity data
+- [ ] There are other APIs, so continue with the Mars Image API to add images to the weather sol cards
+- [ ] Build the Detail View for the cards
+- [ ] Add images to the detail view and the cards
+- [ ] Use Bootstrap to style the Navbar
 
 ### Customize configuration
 
