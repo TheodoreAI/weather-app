@@ -2,6 +2,7 @@
   <div class="">
     <div class="card-body text-center">
       <h1>Curiosity Rover</h1>
+
       <div class="row">
         <div class="col-3">
           <button
