@@ -16,12 +16,12 @@
           role="tab"
           aria-controls="pills-home"
           aria-selected="true"
-          >Mars Weather</router-link
+          >Past Weather</router-link
         >
       </li>
       <li class="nav-item">
         <router-link
-          to="/about"
+          to="/current-weather"
           @click="chosen(false)"
           :class="{
             'nav-link': this.toggled,
@@ -34,7 +34,7 @@
           role="tab"
           aria-controls="pills-about"
           aria-selected="true"
-          >Rover View</router-link
+          >Current Weather</router-link
         >
       </li>
     </ul>

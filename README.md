@@ -53,11 +53,30 @@ yarn lint
 
 ### What I did -
 
-- [ ] **Make the weather app sol components is currently in progress**
-- [ ] There are other APIs, so continue with the Mars Image API to add images to the weather sol cards
+- [x] **Make the weather app sol components is currently in progress**
+- [x] There are other APIs, so continue with the Mars Image API to add images to the weather sol cards
+- [x] Use Bootstrap to style the Navbar
 - [ ] Build the Detail View for the cards
 - [ ] Add images to the detail view and the cards
-- [ ] Use Bootstrap to style the Navbar
+
+### Any Issues -
+
+- [ ] ~~Not all Sols (Martian Days) have images~~
+
+### What I learned -
+
+- Using the Rover Photos API to pull different types of images from different instruments
+
+### Day 3
+
+### What I will do -
+
+- [ ] Build the Detail View for the cards
+- [ ] Make photo component to render each Instrument category on a column
+  - FHAZ
+  - RHAZ
+  - NAVCAM
+  - MAST
 
 ### Any Issues -
 
