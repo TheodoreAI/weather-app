@@ -1,5 +1,6 @@
 <template>
   <div class="card text-white bg-secondary p-3 m-3">
+    <SunnyDay />
     <div v-if="urlList.length > 0">
       <img class="figure-img img-fluid rounded" :src="urlList[0].url" />
     </div>
@@ -20,8 +21,10 @@
 <script>
 import { mapState } from "vuex";
 import axios from "axios";
+import SunnyDay from "./SunnyDay.vue";
 export default {
   name: "DetailView",
+  components: { SunnyDay },
   data() {
     return { solNumber: this.sol, urlList: [] };
   },
