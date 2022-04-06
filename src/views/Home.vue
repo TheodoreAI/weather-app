@@ -12,14 +12,14 @@
           :minTemp="sol.min"
           :date="sol.Date"
         />
-        <p>{{ this.marsImgUrls }}</p>
       </div>
     </div>
   </div>
+  <p>{{ this.getUrl }}</p>
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapGetters } from "vuex";
 // @ is an alias to /src
 
 import DetailView from "@/components/DetailView.vue";
@@ -31,7 +31,8 @@ export default {
   },
 
   computed: {
-    ...mapState(["weatherData", "marsImgUrls"]),
+    ...mapState(["weatherData", "urlList"]),
+    ...mapGetters(["getUrl"]),
   },
 };
 </script>
