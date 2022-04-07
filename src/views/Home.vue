@@ -9,21 +9,21 @@
 
     <h1>Mars Weather</h1>
     <div class="d-flex justify-content-center row rows-col-1 g-4 gap-3 mx-auto">
-      <div v-for="sol in weatherData" :key="sol.Sol" class="col">
+      <div v-for="(sol, index) in weatherData" :key="sol.Sol" class="col">
         <DetailView
           :sol="sol.Sol"
           :maxTemp="sol.max"
           :minTemp="sol.min"
           :date="sol.Date"
+          :imgUrl="[this.getUrl.key ? this.getUrl.key[index].url : '']"
         />
-        <p>{{ this.marsImgUrls }}</p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapGetters } from "vuex";
 // @ is an alias to /src
 
 import DetailView from "@/components/DetailView.vue";
@@ -35,7 +35,8 @@ export default {
   },
 
   computed: {
-    ...mapState(["weatherData", "marsImgUrls"]),
+    ...mapState(["weatherData", "urlList"]),
+    ...mapGetters(["getUrl"]),
   },
 };
 </script>
