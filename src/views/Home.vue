@@ -11,7 +11,9 @@
           :maxTemp="sol.max"
           :minTemp="sol.min"
           :date="sol.Date"
-          :imgUrl="[this.getUrl.key ? this.getUrl.key[index].url : '']"
+          :imgUrl="[
+            this.getUrl.key.length > 0 ? this.getUrl.key[index].url : '',
+          ]"
         />
       </div>
     </div>
