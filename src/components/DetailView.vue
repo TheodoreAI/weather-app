@@ -14,6 +14,7 @@
       <p class="card-text">{{ this.date }}</p>
       <p class="card-text">H: {{ this.maxTemp }}</p>
       <p class="card-text">L: {{ this.minTemp }}</p>
+      <button class="btn btn-primary">View</button>
     </div>
   </div>
 </template>
@@ -68,6 +69,7 @@ export default {
     },
     getImageUrl(id) {
       let url;
+
       url = this.urlList.forEach((img) => {
         if (id == img.id) {
           return img.url;
