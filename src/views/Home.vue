@@ -1,8 +1,12 @@
 <template>
   <div class="card text-center">
-    <img
-      src="https://d2pn8kiwq2w21t.cloudfront.net/original_images/jpegPIA22486.jpg"
-    />
+    <div class="card text-center">
+      <img
+        src="https://d2pn8kiwq2w21t.cloudfront.net/original_images/jpegPIA22486.jpg"
+      />
+      <div class="centered">Centered</div>
+    </div>
+
     <h1>Mars Weather</h1>
     <div class="d-flex justify-content-center row rows-col-1 g-4 gap-3 mx-auto">
       <div v-for="sol in weatherData" :key="sol.Sol" class="col">
@@ -35,3 +39,14 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* Container holding the image and the text */
+</style>
