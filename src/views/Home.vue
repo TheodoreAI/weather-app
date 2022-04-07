@@ -45,5 +45,16 @@ export default {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.header {
+  text-align: center;
+  color: #934838;
+  background: url("https://d2pn8kiwq2w21t.cloudfront.net/original_images/jpegPIA22486.jpg")
+    100% 100% no-repeat;
+
+  height: 1000px;
+  background-size: cover;
+  background-position: center center;
+  padding: 30px;
+}
 /* Container holding the image and the text */
 </style>
