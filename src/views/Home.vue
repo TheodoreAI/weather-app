@@ -5,17 +5,17 @@
     />
     <h1>Mars Weather</h1>
     <div class="d-flex justify-content-center row rows-col-1 g-4 gap-3 mx-auto">
-      <div v-for="sol in weatherData" :key="sol.Sol" class="col">
+      <div v-for="(sol, index) in weatherData" :key="sol.Sol" class="col">
         <DetailView
           :sol="sol.Sol"
           :maxTemp="sol.max"
           :minTemp="sol.min"
           :date="sol.Date"
+          :imgUrl="[this.getUrl.key ? this.getUrl.key[index].url : '']"
         />
       </div>
     </div>
   </div>
-  <p>{{ this.getUrl }}</p>
 </template>
 
 <script>

@@ -21,7 +21,6 @@
 
 <script>
 import { mapActions } from "vuex";
-
 import SunnyDay from "./SunnyDay.vue";
 
 export default {
@@ -36,7 +35,7 @@ export default {
     date: String,
     maxTemp: String,
     minTemp: String,
-    imgUrl: String,
+    imgUrl: Array,
   },
 
   methods: {
