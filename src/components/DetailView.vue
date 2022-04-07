@@ -40,11 +40,9 @@ export default {
   },
 
   methods: {
-
     ...mapActions(["fetchUrlList"]),
     getImageUrl() {
       this.fetchUrlList();
-
     },
   },
 };
