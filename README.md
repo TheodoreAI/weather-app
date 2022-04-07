@@ -71,12 +71,26 @@ yarn lint
 
 ### What I will do -
 
-- [ ] Build the Detail View for the cards
-- [ ] Make photo component to render each Instrument category on a column
-  - FHAZ
-  - RHAZ
-  - NAVCAM
-  - MAST
+- [x] Add Weather man component
+- [x] Add weather svg component
+- [x] Store image URL's in JSON file
+
+### Any Issues -
+
+- using localStorage with Vuex is difficult almost got it
+
+### What I learned -
+
+Learned how localStorage _might_ work with Vuex
+
+### Customize configuration
+
+### Day 4
+
+### What I will do -
+
+- continue with weather man component
+- address the localStorage branch
 
 ### Any Issues -
 

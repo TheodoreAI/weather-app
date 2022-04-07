@@ -14,6 +14,7 @@
       <p class="card-text">{{ this.date }}</p>
       <p class="card-text">H: {{ this.maxTemp }}</p>
       <p class="card-text">L: {{ this.minTemp }}</p>
+      <button class="btn btn-primary">View</button>
     </div>
   </div>
   <button @click="getImageUrl()">Setup</button>
@@ -39,9 +40,11 @@ export default {
   },
 
   methods: {
+
     ...mapActions(["fetchUrlList"]),
     getImageUrl() {
       this.fetchUrlList();
+
     },
   },
 };
