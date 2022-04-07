@@ -77,11 +77,11 @@ yarn lint
 
 ### Any Issues -
 
-- using localStorage with Vuex was a difficult
+- using localStorage with Vuex is difficult almost got it
 
 ### What I learned -
 
-Learned how localStorage can work with Vuex
+Learned how localStorage _might_ work with Vuex
 
 ### Customize configuration
 
@@ -90,6 +90,7 @@ Learned how localStorage can work with Vuex
 ### What I will do -
 
 - continue with weather man component
+- address the localStorage branch
 
 ### Any Issues -
 
