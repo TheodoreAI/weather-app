@@ -1,6 +1,6 @@
 <template>
-  <div class="header">
-    <div>
+  <div :style="myStyle">
+    <div class="header">
       <h1>Curiosity Rover</h1>
       <div
         v-if="this.notification.length > 0"
@@ -44,47 +44,14 @@
         />
       </form>
 
-      <div class="row" v-for="img in this.photos" :key="img.id">
-        <div class="col-3">
-          <button class="btn btn-primary m-1 rounded" @click="searchQuery()">
-            MAST Camera
-          </button>
-          <div class="testBox">image here<img :src="img.img_src" /></div>
-          <div class="testBox">image here</div>
-          <div class="testBox">image here</div>
-        </div>
-        <div class="col-3">
-          <button
-            class="btn btn-primary m-1 rounded"
-            @click="showimage('NAVCAM')"
-          >
-            Navigation Camera View
-          </button>
-          <div class="testBox">image here</div>
-          <div class="testBox">image here</div>
-          <div class="testBox">image here</div>
-        </div>
-        <div class="col-3">
-          <button
-            class="btn btn-primary mx-auto m-1 rounded"
-            @click="showimage('FHAZ')"
-          >
-            Front Camera View
-          </button>
-          <div class="testBox">image here</div>
-          <div class="testBox">image here</div>
-          <div class="testBox">image here</div>
-        </div>
-        <div class="col-3">
-          <button
-            class="btn btn-primary mx-auto m-1 rounded"
-            @click="showimage('RHAZ')"
-          >
-            Rear Camera View
-          </button>
-          <div class="testBox">image here</div>
-          <div class="testBox">image here</div>
-          <div class="testBox">image here</div>
+      <div class="row">
+        <div class="col-3" v-for="img in this.photos" :key="img.id">
+          <label class="btn btn-primary m-1 rounded">
+            Image Id: {{ img.id }}
+          </label>
+          <div class="testBox">
+            <img :src="img.img_src" class="rounded mx-auto d-block" />
+          </div>
         </div>
       </div>
     </div>
@@ -105,6 +72,9 @@ export default {
       notification: "",
       found: false,
       photos: [],
+      myStyle: {
+        backgroundColor: "black",
+      },
     };
   },
   computed: {
@@ -146,18 +116,17 @@ export default {
       console.log("extractPhotos()");
       // Make sure there are photos being returned
       if (res.data != undefined) {
+        // Make sure there are photos
         if (res.data.photos.length > 0) {
           this.updateNotification("Image(s) found!", true);
           photos = res.data.photos.map((photo) => {
-            this.updatePhotos(photos);
             return photo;
           });
-          return photos;
+          console.log(photos);
+          this.updatePhotos(photos);
+        } else {
+          this.updateNotification("No image(s) found!", false);
         }
-        this.updateNotification("No image(s) found!", false);
-        return photos;
-      } else {
-        return photos;
       }
     },
   },
@@ -175,10 +144,9 @@ export default {
 .header {
   text-align: center;
   color: #934838;
-  background: url("https://d2pn8kiwq2w21t.cloudfront.net/original_images/jpegPIA22486.jpg")
-    100% 100% no-repeat;
+  background: black 100% 100% no-repeat;
 
-  height: 1000px;
+  height: auto;
   background-size: cover;
   background-position: center center;
   padding: 30px;
@@ -190,7 +158,7 @@ export default {
 
 .testBox {
   display: flex;
-  background-color: grey;
+
   height: 300px;
   margin: 30px;
 }
