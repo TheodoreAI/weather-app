@@ -10,25 +10,39 @@
       </div>
     </div>
     <div class="card-body">
-      <h3 class="card-title">Mars Sol {{ this.sol }}</h3>
       <p class="card-text">{{ this.date }}</p>
       <p class="card-text">H: {{ this.maxTemp }}</p>
       <p class="card-text">L: {{ this.minTemp }}</p>
     </div>
+    <button type="button" class="btn martianColors" @click="showModal">
+      Martian Day: {{ this.sol }}
+    </button>
   </div>
   <!-- <button @click="getImageUrl()">Setup</button> -->
+  <Modal
+    v-show="isModalVisible"
+    @close="closeModal"
+    :sol="this.sol"
+    :date="this.date"
+    :maxTemp="this.maxTemp"
+    :minTemp="this.minTemp"
+    :imgUrl="this.imgUrl"
+  />
 </template>
 
 <script>
 import { mapActions } from "vuex";
 import SunnyDay from "./SunnyDay.vue";
 
+import Modal from "@/components/Modal.vue";
+
 export default {
   name: "DetailView",
-  components: { SunnyDay },
+  components: { SunnyDay, Modal },
   data() {
     return {
       solNumber: this.sol,
+      isModalVisible: false,
     };
   },
 
@@ -45,6 +59,19 @@ export default {
     getImageUrl() {
       this.fetchUrlList();
     },
+    showModal() {
+      this.isModalVisible = true;
+    },
+    closeModal() {
+      this.isModalVisible = false;
+    },
   },
 };
 </script>
+
+<style scoped>
+.martianColors {
+  background-color: white;
+  color: #934838;
+}
+</style>

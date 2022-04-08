@@ -2,20 +2,20 @@
   <div class="modal-backdrop">
     <div class="modal">
       <header class="modal-header">
-        <p name="header">
-          This is the default title! -- again more params or props
-        </p>
+        <h1 name="header" class="martianColors">Martian Day {{ this.sol }}</h1>
         <button type="button" class="btn btn-danger btn-lg" @click="close">
           Close
         </button>
       </header>
 
       <section class="modal-body">
-        <h2>The Body - will need to get passed some parameters</h2>
+        <h2>Highest temperature reached: {{ this.maxTemp }}</h2>
+        <h2>Lowest temperature reached: {{ this.minTemp }}</h2>
+        <img :src="this.imgUrl" style="opacity: 1; border-radius: 20px" />
       </section>
 
       <footer class="modal-footer">
-        <p name="footer">This is the default footer! more props</p>
+        <p name="footer">{{ this.date }}</p>
         <button type="button" class="btn btn-danger" @click="close">
           Close Modal
         </button>
@@ -27,6 +27,13 @@
 <script>
 export default {
   name: "Modal",
+  props: {
+    sol: Number,
+    date: String,
+    maxTemp: String,
+    minTemp: String,
+    imgUrl: Array,
+  },
   methods: {
     close() {
       this.$emit("close");
@@ -86,5 +93,10 @@ export default {
 .modal-fade-enter-active,
 .modal-fade-leave-active {
   transition: opacity 0.5s ease;
+}
+
+.martianColors {
+  background-color: white;
+  color: #934838;
 }
 </style>
