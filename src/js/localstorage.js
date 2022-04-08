@@ -20,8 +20,6 @@ export default function fetchAPI(weatherData, api_key, commit) {
     }
   });
 
-  console.log(arr);
-
   commit("INITIALIZE_STORAGE", { key: arr });
 }
 
