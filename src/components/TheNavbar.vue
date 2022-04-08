@@ -9,13 +9,6 @@
             'nav-link': !this.toggled,
             'nav-link active': this.toggled,
           }"
-          id="pills-home-tab"
-          data-bs-toggle="pill"
-          data-bs-target="#pills-home"
-          type="button"
-          role="tab"
-          aria-controls="pills-home"
-          aria-selected="true"
           >Past Weather</router-link
         >
       </li>
@@ -27,13 +20,6 @@
             'nav-link': this.toggled,
             'nav-link active': !this.toggled,
           }"
-          id="pills-about-tab"
-          data-bs-toggle="pill"
-          data-bs-target="#pills-about"
-          type="button"
-          role="tab"
-          aria-controls="pills-about"
-          aria-selected="true"
           >Current Weather</router-link
         >
       </li>

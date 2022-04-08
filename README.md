@@ -89,8 +89,24 @@ Learned how localStorage _might_ work with Vuex
 
 ### What I will do -
 
-- continue with weather man component
-- address the localStorage branch
+- [x] Added a modal component to the cards
+- [x] address the localStorage branch - fix bugs and complete the object instantiation to store image urls
+- [x] Added a background-image and changed the layout of the cards
+
+### Any Issues -
+
+- Bugs when using localStorage and setting a timer so that the API gets called every 24 hours to get new data - made that a stretch goal
+
+### What I learned -
+
+- You can only store strings in localStorage, making async calls to api, storing them
+
+### Day 5
+
+### What I will do -
+
+- [] Edit the modal component to fit the needs of each card
+- [] Get calls to fill up the other page
 
 ### Any Issues -
 

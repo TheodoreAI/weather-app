@@ -6,6 +6,9 @@
       style="opacity: 85%; bottom: 0"
     >
       <div v-for="(sol, index) in weatherData" :key="sol.Sol" class="col">
+        <button type="button" class="btn martianColors" @click="showModal">
+          Martian Day:{{ sol.Sol }}
+        </button>
         <DetailView
           :sol="sol.Sol"
           :maxTemp="sol.max"
@@ -15,6 +18,8 @@
             this.getUrl.key.length > 0 ? this.getUrl.key[index].url : '',
           ]"
         />
+
+        <Modal v-show="isModalVisible" @close="closeModal" />
       </div>
     </div>
   </div>
@@ -23,18 +28,32 @@
 <script>
 import { mapState, mapGetters } from "vuex";
 // @ is an alias to /src
-
+import Modal from "@/components/Modal.vue";
 import DetailView from "@/components/DetailView.vue";
 
 export default {
   name: "Home",
   components: {
     DetailView,
+    Modal,
   },
 
+  data() {
+    return {
+      isModalVisible: false,
+    };
+  },
   computed: {
     ...mapState(["weatherData", "urlList"]),
     ...mapGetters(["getUrl"]),
+  },
+  methods: {
+    showModal() {
+      this.isModalVisible = true;
+    },
+    closeModal() {
+      this.isModalVisible = false;
+    },
   },
 };
 </script>
@@ -57,6 +76,10 @@ export default {
   background-size: cover;
   background-position: center center;
   padding: 30px;
+}
+.martianColors {
+  background-color: #934838;
+  color: white;
 }
 /* Container holding the image and the text */
 </style>
