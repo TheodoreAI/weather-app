@@ -79,6 +79,7 @@ export default {
 }
 .martianColors {
   background-color: #934838;
+  color: white;
 }
 /* Container holding the image and the text */
 </style>
