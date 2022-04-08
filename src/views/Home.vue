@@ -1,20 +1,20 @@
 <template>
-  <div class="header position-relative">
-    <h1>Mars Weather</h1>
-    <div
-      class="d-flex justify-content-center row rows-col-1 g-4 gap-3 mx-auto"
-      style="opacity: 85%; bottom: 0"
-    >
-      <div v-for="(sol, index) in weatherData" :key="sol.Sol" class="col">
-        <DetailView
-          :sol="sol.Sol"
-          :maxTemp="sol.max"
-          :minTemp="sol.min"
-          :date="sol.Date"
-          :imgUrl="[
-            this.getUrl.key.length > 0 ? this.getUrl.key[index].url : '',
-          ]"
-        />
+  <div class="header">
+    <div class="gap-3">
+      <h1 style="margin-bottom: 400px">Mars Weather</h1>
+
+      <div class="row rows-col-1 g-4 gap-3 mx-auto" style="opacity: 85%">
+        <div v-for="(sol, index) in weatherData" :key="sol.Sol" class="col">
+          <DetailView
+            :sol="sol.Sol"
+            :maxTemp="sol.max"
+            :minTemp="sol.min"
+            :date="sol.Date"
+            :imgUrl="[
+              this.getUrl.key.length > 0 ? this.getUrl.key[index].url : '',
+            ]"
+          />
+        </div>
       </div>
     </div>
   </div>

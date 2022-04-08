@@ -1,5 +1,5 @@
 <template>
-  <div class="card text-white bg-secondary p-3 m-3">
+  <div class="card text-white bg-dark p-3 m-3" style="bottom: 0; width: 200px">
     <SunnyDay />
     <div v-if="this.imgUrl">
       <img class="figure-img img-fluid rounded" :src="this.imgUrl" />
@@ -11,8 +11,14 @@
     </div>
     <div class="card-body">
       <p class="card-text">{{ this.date }}</p>
-      <p class="card-text">H: {{ this.maxTemp }}</p>
-      <p class="card-text">L: {{ this.minTemp }}</p>
+      <div class="row">
+        <div class="col-6">
+          <p class="card-text">H: {{ this.maxTemp }}</p>
+        </div>
+        <div class="col-6">
+          <p class="card-text">L: {{ this.minTemp }}</p>
+        </div>
+      </div>
     </div>
     <button type="button" class="btn martianColors" @click="showModal">
       Martian Day: {{ this.sol }}

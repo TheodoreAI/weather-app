@@ -7,10 +7,15 @@
           Close
         </button>
       </header>
-
       <section class="modal-body">
-        <h2>Highest temperature reached: {{ this.maxTemp }}</h2>
-        <h2>Lowest temperature reached: {{ this.minTemp }}</h2>
+        <div class="row">
+          <div class="col-6">
+            <h2>Highest temperature reached: {{ this.maxTemp }}</h2>
+          </div>
+          <div class="col-6">
+            <h2>Lowest temperature reached: {{ this.minTemp }}</h2>
+          </div>
+        </div>
         <img :src="this.imgUrl" style="opacity: 1; border-radius: 20px" />
       </section>
 
