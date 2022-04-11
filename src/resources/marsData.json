@@ -1,10 +1,38 @@
 [
   {
-    "Date": "Mar. 30, 2022",
-    "Sol": 3429,
+    "Date": "Mar. 25, 2022",
+    "Sol": 3424,
+    "max": "34°F",
+    "min": "-90°F",
+    "Pressure (Pa)": 762,
+    "Sunrise": "05:18",
+    "Sunset": "17:22"
+  },
+  {
+    "Date": "Mar. 26, 2022",
+    "Sol": 3425,
     "max": "36°F",
-    "min": "-89°F",
-    "Pressure (Pa)": 768,
+    "min": "-87°F",
+    "Pressure (Pa)": 762,
+    "Sunrise": "05:18",
+    "Sunset": "17:22"
+  },
+
+  {
+    "Date": "Mar. 27, 2022",
+    "Sol": 3426,
+    "max": "36°F",
+    "min": "-92°F",
+    "Pressure (Pa)": 763,
+    "Sunrise": "05:18",
+    "Sunset": "17:22"
+  },
+  {
+    "Date": "Mar. 28, 2022",
+    "Sol": 3427,
+    "max": "34°F",
+    "min": "-92°F",
+    "Pressure (Pa)": 763,
     "Sunrise": "05:18",
     "Sunset": "17:23"
   },
@@ -17,50 +45,14 @@
     "Sunrise": "05:18",
     "Sunset": "17:23"
   },
-  {
-    "Date": "Mar. 28, 2022",
-    "Sol": 3427,
-    "max": "34°F",
-    "min": "-92°F",
-    "Pressure (Pa)": 763,
-    "Sunrise": "05:18",
-    "Sunset": "17:23"
-  },
-  {
-    "Date": "Mar. 27, 2022",
-    "Sol": 3426,
-    "max": "36°F",
-    "min": "-92°F",
-    "Pressure (Pa)": 763,
-    "Sunrise": "05:18",
-    "Sunset": "17:22"
-  },
 
   {
-    "Date": "Mar. 26, 2022",
-    "Sol": 3425,
+    "Date": "Mar. 30, 2022",
+    "Sol": 3429,
     "max": "36°F",
-    "min": "-87°F",
-    "Pressure (Pa)": 762,
+    "min": "-89°F",
+    "Pressure (Pa)": 768,
     "Sunrise": "05:18",
-    "Sunset": "17:22"
-  },
-  {
-    "Date": "Mar. 25, 2022",
-    "Sol": 3424,
-    "max": "34°F",
-    "min": "-90°F",
-    "Pressure (Pa)": 762,
-    "Sunrise": "05:18",
-    "Sunset": "17:22"
-  },
-  {
-    "Date": "Mar. 24, 2022",
-    "Sol": 3423,
-    "max": "23°F",
-    "min": "-90°F",
-    "Pressure (Pa)": 760,
-    "Sunrise": "05:18",
-    "Sunset": "17:22"
+    "Sunset": "17:23"
   }
 ]
