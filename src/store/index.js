@@ -41,7 +41,7 @@ export default createStore({
     },
     searchImages({ commit }, queryObj) {
       let api_key = process.env.VUE_APP_NASA_API;
-      callAPI(api_key, queryObj.camera, queryObj.sol, commit);
+      callAPI(api_key, queryObj, commit);
     },
   },
   modules: {},

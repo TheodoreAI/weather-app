@@ -19,24 +19,33 @@
           v-model="this.queryObject.camera"
           required
         >
-          <option selected>Open this select menu</option>
           <option value="FHAZ">Front-Camera</option>
           <option value="RHAZ">Rear-Camera</option>
           <option value="MAST">MAST</option>
+          <option value="MAHLI">Mars Hand Lens Imager</option>
           <option value="MARDI">Mars Descent Imager</option>
           <option value="NAVCAM">Navigation-Camera</option>
         </select>
-        <label class="fw-bold"> (Range 1 - 3436 Sols)</label>
+        <label class="fw-bold">
+          Please input a sol (Martian Day) you would like to see
+        </label>
         <input
-          placeholder="Please input a sol (Martian Day) you would like to see"
-          id="floatingInputValue"
-          class="m-1 rounded mx-auto p-1 w-100"
-          input-type="number"
+          placeholder="(Range 1 - 3436 Sols)"
+          class="m-1 rounded mx-auto p-1 w-100 text-center"
+          type="number"
           min="1"
           max="3436"
           v-model.number="this.queryObject.sol"
-          required
         />
+        <label>Or use the Earth Date:</label>
+        <input
+          class="m-1 rounded mx-auto p-1 w-100 text-center"
+          type="date"
+          min="2012-08-06"
+          placeholder="Start of mission: "
+          v-model="this.queryObject.earthDate"
+        />
+
         <input
           class="btn btn-primary btn-lg m-1 rounded"
           @click="searchQuery()"
@@ -47,9 +56,7 @@
 
       <div class="row">
         <div class="col-3" v-for="img in this.photos" :key="img.id">
-          <label class="btn btn-primary m-1 rounded">
-            Image Id: {{ img.id }}
-          </label>
+          <label class="m-1 rounded"> Image Id: {{ img.id }} </label>
           <div class="testBox">
             <img :src="img.img_src" class="rounded mx-auto d-block" />
           </div>
@@ -69,13 +76,11 @@ export default {
       queryObject: {
         camera: "select",
         sol: null,
+        earthDate: "2012-08-07",
       },
       notification: "",
       found: false,
       photos: [],
-      myStyle: {
-        backgroundColor: "black",
-      },
     };
   },
   computed: {
@@ -94,12 +99,6 @@ export default {
   },
   methods: {
     ...mapActions(["searchImages"]),
-    passCamera(value) {
-      this.queryObject.camera = value;
-    },
-    passSolNumber(value) {
-      this.queryObject.sol = value;
-    },
     searchQuery() {
       console.log("Searching database for images...", this.queryObject);
       this.searchImages(this.queryObject);
@@ -114,7 +113,6 @@ export default {
 
     extractPhotos(res) {
       let photos = [];
-      console.log("extractPhotos()");
       // Make sure there are photos being returned
       if (res.data != undefined) {
         // Make sure there are photos
@@ -145,7 +143,7 @@ export default {
 .header {
   text-align: center;
   color: #934838;
-  background: black 100% 100% no-repeat;
+  background: #a1aba7 100% 100% no-repeat;
 
   min-height: 100vh;
   background-size: cover;
