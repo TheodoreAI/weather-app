@@ -1,5 +1,5 @@
 <template>
-  <div :style="myStyle">
+  <div>
     <div class="header">
       <h1>Curiosity Rover</h1>
       <div
@@ -23,6 +23,7 @@
           <option value="FHAZ">Front-Camera</option>
           <option value="RHAZ">Rear-Camera</option>
           <option value="MAST">MAST</option>
+          <option value="MARDI">Mars Descent Imager</option>
           <option value="NAVCAM">Navigation-Camera</option>
         </select>
         <label class="fw-bold"> (Range 1 - 3436 Sols)</label>
@@ -146,10 +147,10 @@ export default {
   color: #934838;
   background: black 100% 100% no-repeat;
 
-  height: auto;
+  min-height: 100vh;
   background-size: cover;
   background-position: center center;
-  padding: 30px;
+  padding: 5px;
 }
 .martianColors {
   background-color: #934838;

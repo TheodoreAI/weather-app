@@ -105,8 +105,23 @@ Learned how localStorage _might_ work with Vuex
 
 ### What I will do -
 
-- [] Edit the modal component to fit the needs of each card
-- [] Get calls to fill up the other page
+- [x] Edit the modal component to fit the needs of each card
+- [x] Get calls to fill up the other page
+
+### Any Issues -
+
+- [x] some of the sols don't have images, have to adjust that and added a feature to let users know
+
+### What I learned -
+
+- Building a search-like functionality using a database, not accepting strings to avoid cross site scripting. (Only accept numbers for the sols.)
+
+### Day 6
+
+### What I will do -
+
+- []
+- []
 
 ### Any Issues -
 
