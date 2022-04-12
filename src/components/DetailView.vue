@@ -2,7 +2,7 @@
   <div class="card text-white bg-dark p-3 m-3" style="bottom: 0; width: 200px">
     <SunnyDay />
     <div v-if="this.camera != ''">
-      <p>Rover camera: {{ this.camera[0] }}</p>
+      <p>Camera: {{ this.camera[0] }}</p>
     </div>
     <div v-else>
       <div class="spinner-border" role="status">
@@ -33,7 +33,6 @@
       Martian Day: {{ this.sol }}
     </button>
   </div>
-  <!-- <button @click="getImageUrl()">Setup</button> -->
   <Modal
     v-show="isModalVisible"
     @close="closeModal"

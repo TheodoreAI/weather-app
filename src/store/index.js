@@ -1,13 +1,12 @@
 import { createStore } from "vuex";
 import axios from "axios";
 import callAPI from "../js/searchQuery";
-// import marsData from "@/resources/marsData.json";
 import marsLatest from "@/resources/marsLatest.json";
 
 export default createStore({
   state: {
     weatherData: marsLatest,
-    images: JSON.stringify([]),
+    images: JSON.parse(localStorage.getItem("IMAGES")),
     searchResults: [],
   },
   mutations: {
@@ -20,6 +19,17 @@ export default createStore({
         console.log("Empty Array");
       }
     },
+    ADD_TO_WEATHERDATA: (state, objects) => {
+      state.weatherData.map((sol) => {
+        if (sol.Sol == objects.sol || objects.sol == 0) {
+          sol.sol = objects.sol;
+          sol.earth_date = objects.earth_date;
+          sol.img = objects.img;
+          sol.camera = objects.camera;
+        }
+      });
+      console.log(state.weatherData);
+    },
     INIT_SEARCH_RESULTS: (state, value) => {
       state.searchResults = value;
     },
@@ -27,7 +37,6 @@ export default createStore({
   getters: {
     getImages(state) {
       // You need to JSON.parse the localStorage object because it was stored using JSON.stringify (using string "serialization")
-
       let obj = JSON.parse(state.images);
       return obj;
     },
@@ -37,7 +46,8 @@ export default createStore({
     },
   },
   actions: {
-    fetchUrlList({ state, commit }, camera) {
+    // Actions are connected via dispatch --> something new
+    addImages: ({ state, dispatch }, camera) => {
       let api_key = process.env.VUE_APP_NASA_API;
       let images = [];
       let promises = [];
@@ -59,10 +69,44 @@ export default createStore({
         );
       }
       Promise.all(promises).then(() => {
-        console.log("The images inside the promise.all", images);
-        commit("INITIALIZE_STORAGE", images);
+        dispatch("filterImages", images);
       });
     },
+    filterImages: ({ commit }, images) => {
+      let obj = {
+        sol: "",
+        earth_date: "",
+        img: "",
+        camera: "",
+      };
+      if (images.length > 0) {
+        images.forEach((day) => {
+          if (day.statusText == "OK") {
+            let photo = day.data.photos;
+            if (photo.length > 0) {
+              // Getting the sol and the earth date and the img_src to the imagesData array
+              obj.sol = photo[0].sol;
+              obj.earth_date = photo[0].earth_date;
+              obj.img = photo[0].img_src;
+              obj.camera = photo[0].camera.name;
+              commit("ADD_TO_WEATHERDATA", obj);
+            } else {
+              obj.sol = 0;
+              obj.earth_date = new Date().toISOString().split("T")[0];
+              obj.img =
+                "https://1080motion.com/wp-content/uploads/2018/06/NoImageFound.jpg.png";
+              obj.camera = "No Image Found";
+              console.log("No first image");
+              commit("ADD_TO_WEATHERDATA", obj);
+            }
+          } else {
+            console.log("Error with query");
+          }
+        });
+        commit("INITIALIZE_STORAGE", obj);
+      }
+    },
+
     searchImages({ commit }, queryObj) {
       let api_key = process.env.VUE_APP_NASA_API;
       callAPI(api_key, queryObj, commit);

@@ -23,19 +23,15 @@
           type="button"
         />
       </form>
-      <div class="row rows-col-1 g-4 gap-3 mx-auto" style="opacity: 85%">
-        <div v-for="(sol, index) in weatherData" :key="sol.Sol" class="col">
+      <div class="row rows-col-1 g-4 gap-3 mx-auto">
+        <div v-for="(sol, i) in weatherData" :key="sol.Sol" class="col">
           <DetailView
             :sol="sol.Sol"
             :maxTemp="sol.max"
             :minTemp="sol.min"
             :date="sol.Date"
-            :camera="[
-              this.images[index] != undefined ? this.images[index].camera : '',
-            ]"
-            :imgUrl="[
-              this.images[index] != undefined ? this.images[index].img : '',
-            ]"
+            :camera="[this.images != null ? this.images[i].camera : sol.camera]"
+            :imgUrl="[this.images != null ? this.images[i].img : sol.img]"
           />
         </div>
       </div>
@@ -56,47 +52,26 @@ export default {
   data() {
     return {
       camera: "Select",
-      images: [],
+      imagesData: [],
+      obj: {
+        sol: "",
+        earth_date: "",
+        img: "",
+        camera: "",
+      },
     };
   },
 
   computed: {
-    ...mapState(["weatherData", "urlList"]),
+    ...mapState(["weatherData", "images"]),
     ...mapGetters(["getImages"]),
   },
-  watch: {
-    getImages(newImg) {
-      newImg.forEach((day) => {
-        if (day.statusText == "OK") {
-          console.log(day.statusText);
-          this.extractImages(day.data);
-        } else {
-          console.log("Error with query");
-        }
-      });
-    },
-  },
+
   methods: {
-    ...mapActions(["fetchUrlList"]),
+    ...mapActions(["addImages"]),
     searchQuery() {
-      console.log("Searching for images...");
-      this.fetchUrlList(this.camera);
-    },
-    extractImages(imgDay) {
-      let photo = imgDay.photos;
-      if (photo.length > 0) {
-        // Getting the sol and the earth date and the img_src to the images array
-        let obj = {
-          sol: photo[0].sol,
-          earth_date: photo[0].earth_date,
-          img: photo[0].img_src,
-          camera: photo[0].camera.name,
-        };
-        this.images.push(obj);
-        console.log("Typeof:", typeof obj.camera);
-      } else {
-        console.log("No first image");
-      }
+      console.log("Searching for imagesData...");
+      this.addImages(this.camera);
     },
   },
 };
