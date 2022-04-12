@@ -1,0 +1,56 @@
+[
+  {
+    "Date": "Apr. 1, 2022",
+    "Sol": 3431,
+    "max": "30°F",
+    "min": "-89°F",
+    "Pressure (Pa)": 773,
+    "Sunrise": "05:18",
+    "Sunset": "17:23"
+  },
+  {
+    "Date": "Apr. 2, 2022",
+    "Sol": 3432,
+    "max": "32°F",
+    "min": "-89°F",
+    "Pressure (Pa)": 773,
+    "Sunrise": "05:18",
+    "Sunset": "17:24"
+  },
+  {
+    "Date": "Apr. 3, 2022",
+    "Sol": 3433,
+    "max": "34°F",
+    "min": "-99°F",
+    "Pressure (Pa)": 775,
+    "Sunrise": "05:18",
+    "Sunset": "17:24"
+  },
+  {
+    "Date": "Apr. 4, 2022",
+    "Sol": 3434,
+    "max": "36°F",
+    "min": "-89°F",
+    "Pressure (Pa)": 776,
+    "Sunrise": "05:18",
+    "Sunset": "17:24"
+  },
+  {
+    "Date": "Apr. 5, 2022",
+    "Sol": 3435,
+    "max": "30°F",
+    "min": "-87°F",
+    "Pressure (Pa)": 778,
+    "Sunrise": "05:18",
+    "Sunset": "17:24"
+  },
+  {
+    "Date": "Apr. 6, 2022",
+    "Sol": 3436,
+    "max": "36°F",
+    "min": "-96°F",
+    "Pressure (Pa)": 780,
+    "Sunrise": "05:18",
+    "Sunset": "17:24"
+  }
+]

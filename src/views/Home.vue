@@ -1,27 +1,45 @@
 <template>
   <div class="header">
     <div class="gap-3">
-      <h1 style="margin-bottom: 400px">Mars Weather</h1>
-
-      <div class="row rows-col-1 g-4 gap-3 mx-auto" style="opacity: 85%">
-        <div v-for="(sol, index) in weatherData" :key="sol.Sol" class="col">
+      <h1 style="margin-bottom: 400px">Mars Gale Crater Weather</h1>
+      <form class="mx-auto w-25">
+        <select
+          class="form-select"
+          aria-label="rover-cameras"
+          v-model="this.camera"
+          required
+        >
+          <option value="FHAZ">Front-Camera</option>
+          <option value="RHAZ">Rear-Camera</option>
+          <option value="MAST">MAST</option>
+          <option value="MAHLI">Mars Hand Lens Imager</option>
+          <option value="MARDI">Mars Descent Imager</option>
+          <option value="NAVCAM">Navigation-Camera</option>
+        </select>
+        <input
+          class="btn btn-primary btn-lg m-1 rounded"
+          @click="searchQuery()"
+          value="Search"
+          type="button"
+        />
+      </form>
+      <div class="row rows-col-1 g-4 gap-3 mx-auto">
+        <div v-for="(sol, i) in weatherData" :key="sol.Sol" class="col">
           <DetailView
             :sol="sol.Sol"
             :maxTemp="sol.max"
             :minTemp="sol.min"
             :date="sol.Date"
-            :imgUrl="[
-              this.getUrl.key.length > 0 ? this.getUrl.key[index].url : '',
-            ]"
+            :camera="[this.images != null ? this.images[i].camera : sol.camera]"
+            :imgUrl="[this.images != null ? this.images[i].img : sol.img]"
           />
         </div>
       </div>
     </div>
   </div>
 </template>
-
 <script>
-import { mapState, mapGetters } from "vuex";
+import { mapState, mapGetters, mapActions } from "vuex";
 // @ is an alias to /src
 
 import DetailView from "@/components/DetailView.vue";
@@ -31,10 +49,30 @@ export default {
   components: {
     DetailView,
   },
+  data() {
+    return {
+      camera: "Select",
+      imagesData: [],
+      obj: {
+        sol: "",
+        earth_date: "",
+        img: "",
+        camera: "",
+      },
+    };
+  },
 
   computed: {
-    ...mapState(["weatherData", "urlList"]),
-    ...mapGetters(["getUrl"]),
+    ...mapState(["weatherData", "images"]),
+    ...mapGetters(["getImages"]),
+  },
+
+  methods: {
+    ...mapActions(["addImages"]),
+    searchQuery() {
+      console.log("Searching for imagesData...");
+      this.addImages(this.camera);
+    },
   },
 };
 </script>
