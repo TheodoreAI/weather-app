@@ -1,6 +1,15 @@
 <template>
   <div class="card text-white bg-dark p-3 m-3" style="bottom: 0; width: 200px">
     <SunnyDay />
+    <div v-if="this.camera != ''">
+      <p>Rover camera: {{ this.camera[0] }}</p>
+    </div>
+    <div v-else>
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+
     <div v-if="this.imgUrl">
       <img class="figure-img img-fluid rounded" :src="this.imgUrl" />
     </div>
@@ -57,6 +66,7 @@ export default {
     date: String,
     maxTemp: String,
     minTemp: String,
+    camera: Array,
     imgUrl: Array,
   },
 
