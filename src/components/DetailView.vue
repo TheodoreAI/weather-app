@@ -1,26 +1,22 @@
 <template>
-  <div class="card text-white bg-dark p-3 m-3" style="bottom: 0; width: 200px">
-    <SunnyDay />
+  <div
+    class="card text-white bg-dark p-3 m-3"
+    style="bottom: 0; width: 200px; height: auto"
+  >
+    <div class="row">
+      <div class="col"><SunnyDay /></div>
+      <div class="col"><Night /></div>
+    </div>
+
     <div v-if="this.camera != ''">
       <p>Camera: {{ this.camera[0] }}</p>
     </div>
-    <div v-else>
-      <div class="spinner-border" role="status">
-        <span class="visually-hidden">Loading...</span>
-      </div>
-    </div>
-
     <div v-if="this.imgUrl">
       <img
         class="figure-img img-fluid rounded"
         :src="this.imgUrl"
         @click="showModal(this.imgUrl)"
       />
-    </div>
-    <div v-else>
-      <div class="spinner-border" role="status">
-        <span class="visually-hidden">Loading...</span>
-      </div>
     </div>
     <div class="card-body">
       <p class="card-text">{{ this.date }}</p>
@@ -55,12 +51,13 @@
 <script>
 import { mapActions } from "vuex";
 import SunnyDay from "./SunnyDay.vue";
+import Night from "./NightComponent.vue";
 
 import Modal from "@/components/Modal.vue";
 
 export default {
   name: "DetailView",
-  components: { SunnyDay, Modal },
+  components: { SunnyDay, Modal, Night },
   data() {
     return {
       solNumber: this.sol,
