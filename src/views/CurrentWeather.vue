@@ -19,7 +19,7 @@
           v-model="this.queryObject.camera"
           required
         >
-          <option value="FHAZ">Front-Camera</option>
+          <option value="FHAZ" selected>Front-Camera</option>
           <option value="RHAZ">Rear-Camera</option>
           <option value="MAST">MAST</option>
           <option value="MAHLI">Mars Hand Lens Imager</option>
@@ -41,7 +41,7 @@
         <input
           class="m-1 rounded mx-auto p-1 w-100 text-center"
           type="date"
-          min="2012-08-06"
+          min="2012-07-06"
           placeholder="Start of mission: "
           v-model="this.queryObject.earthDate"
         />
@@ -53,13 +53,25 @@
           type="button"
         />
       </form>
-
       <div class="row">
         <div class="col-3" v-for="img in this.photos" :key="img.id">
-          <label class="m-1 rounded"> Image Id: {{ img.id }} </label>
+          <label class="m-1 rounded">
+            Earth Date: <strong>{{ img.earth_date }}</strong>
+          </label>
           <div class="testBox">
-            <img :src="img.img_src" class="rounded mx-auto d-block" />
+            <img
+              :src="img.img_src"
+              class="rounded d-block"
+              @click="showModal(img.img_src)"
+            />
           </div>
+          <ImageModal
+            v-show="isModalVisible"
+            @close="closeModal"
+            :sol="img.sol"
+            :date="img.earth_date"
+            :imgUrl="this.currentImg"
+          />
         </div>
       </div>
     </div>
@@ -68,21 +80,25 @@
 
 <script>
 import { mapActions, mapGetters, mapState } from "vuex";
+import ImageModal from "@/components/ImageModal.vue";
 export default {
-  components: {},
+  components: { ImageModal },
 
   data() {
     return {
       queryObject: {
         camera: "select",
         sol: null,
-        earthDate: "2012-08-07",
+        earthDate: "",
       },
       notification: "",
       found: false,
       photos: [],
+      isModalVisible: false,
+      currentImg: "",
     };
   },
+
   computed: {
     ...mapGetters(["getSearchResults"]),
     ...mapState(["searchResults"]),
@@ -127,6 +143,13 @@ export default {
           this.updateNotification("No image(s) found!", false);
         }
       }
+    },
+    showModal(currentImg) {
+      this.isModalVisible = true;
+      this.currentImg = currentImg;
+    },
+    closeModal() {
+      this.isModalVisible = false;
     },
   },
 };

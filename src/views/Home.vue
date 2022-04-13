@@ -13,7 +13,7 @@
           <option value="RHAZ">Rear-Camera</option>
           <option value="MAST">MAST</option>
           <option value="MAHLI">Mars Hand Lens Imager</option>
-          <option value="MARDI">Mars Descent Imager</option>
+
           <option value="NAVCAM">Navigation-Camera</option>
         </select>
         <input

@@ -1,9 +1,9 @@
 import axios from "axios";
 export default function callAPI(api_key, queryObj, commit) {
   let camera = queryObj.camera;
-  let solNumber = queryObj.solNumber;
+  let solNumber = queryObj.sol;
   let earthDate = queryObj.earthDate;
-
+  console.log("searchQuery.js", solNumber, earthDate);
   if (solNumber != undefined) {
     query(api_key, camera, solNumber, "sol", commit);
   } else if (earthDate != "") {

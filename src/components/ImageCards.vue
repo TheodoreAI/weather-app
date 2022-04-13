@@ -23,20 +23,7 @@ export default {
   data() {
     return { solNumber: this.sol, urlList: [] };
   },
-  // mounted() {
-  //   let api_key = process.env.VUE_APP_NASA_API;
-  //   axios
-  //     .get(
-  //       "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=" +
-  //         this.solNumber +
-  //         "&camera=NAVCAM&api_key=" +
-  //         api_key
-  //     )
-  //     .then((res) => {
-  //       this.saveImage(res);
-  //     })
-  //     .catch((error) => console.log(error));
-  // },
+
   computed: {
     ...mapState(["weatherData"]),
   },
