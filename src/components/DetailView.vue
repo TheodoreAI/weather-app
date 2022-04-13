@@ -11,7 +11,11 @@
     </div>
 
     <div v-if="this.imgUrl">
-      <img class="figure-img img-fluid rounded" :src="this.imgUrl" />
+      <img
+        class="figure-img img-fluid rounded"
+        :src="this.imgUrl"
+        @click="showModal(this.imgUrl)"
+      />
     </div>
     <div v-else>
       <div class="spinner-border" role="status">
@@ -29,7 +33,11 @@
         </div>
       </div>
     </div>
-    <button type="button" class="btn martianColors" @click="showModal">
+    <button
+      type="button"
+      class="btn martianColors"
+      @click="showModal(this.imgUrl)"
+    >
       Martian Day: {{ this.sol }}
     </button>
   </div>
@@ -57,6 +65,7 @@ export default {
     return {
       solNumber: this.sol,
       isModalVisible: false,
+      currentImg: "",
     };
   },
 
@@ -74,8 +83,9 @@ export default {
     getImageUrl() {
       this.fetchUrlList();
     },
-    showModal() {
+    showModal(currentImg) {
       this.isModalVisible = true;
+      this.currentImg = currentImg;
     },
     closeModal() {
       this.isModalVisible = false;
