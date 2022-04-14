@@ -55,16 +55,16 @@
       </form>
       <div class="row">
         <div class="col-3" v-for="img in this.photos" :key="img.id">
-          <label class="m-1 rounded">
-            Earth Date: <strong>{{ img.earth_date }}</strong>
-          </label>
-          <div class="testBox">
+          <div class="row">
             <img
               :src="img.img_src"
               class="rounded d-block"
               @click="showModal(img.img_src)"
             />
           </div>
+          <label class="m-1 rounded">
+            Earth Date:<strong>{{ img.earth_date }}</strong>
+          </label>
           <ImageModal
             v-show="isModalVisible"
             @close="closeModal"
