@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="header">
-      <h1>Curiosity Rover</h1>
+      <h1>Images</h1>
       <div
         v-if="this.notification.length > 0"
         :class="{

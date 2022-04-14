@@ -1,25 +1,15 @@
 <template>
   <div class="d-flex justify-content-center bg-dark p-4">
-    <ul class="nav nav-pills m-3" id="myTab" role="tablist">
-      <li class="nav-item">
-        <router-link
-          to="/"
-          @click="chosen(true)"
-          :class="{
-            'nav-link': !this.toggled,
-            'nav-link active': this.toggled,
-          }"
+    <ul class="nav m-3" id="myTab" role="tablist">
+      <li class="nav-item mx-3">
+        <router-link to="/" class="nav-link btn btn-primary-outline"
           >Past Weather</router-link
         >
       </li>
       <li class="nav-item">
         <router-link
           to="/current-weather"
-          @click="chosen(false)"
-          :class="{
-            'nav-link': this.toggled,
-            'nav-link active': !this.toggled,
-          }"
+          class="nav-link btn btn-primary-outline"
           >Current Weather</router-link
         >
       </li>
@@ -34,14 +24,15 @@ export default {
   name: "TheNavbar",
   data() {
     return {
-      toggled: JSON.parse(localStorage.getItem("toggleValue")).toggled,
+      toggled: true,
     };
   },
+
   methods: {
-    chosen(value) {
+    setChosen(value) {
       // Leveraging localStorage to maintain the state of the navbar even after reload
-      localStorage.setItem("toggleValue", JSON.stringify({ toggled: value }));
-      this.toggled = JSON.parse(localStorage.getItem("toggleValue")).toggled;
+
+      this.toggled = value;
     },
   },
 };
