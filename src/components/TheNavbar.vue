@@ -34,12 +34,14 @@ export default {
   name: "TheNavbar",
   data() {
     return {
-      toggled: true,
+      toggled: JSON.parse(localStorage.getItem("toggleValue")).toggled,
     };
   },
   methods: {
     chosen(value) {
-      this.toggled = value;
+      // Leveraging localStorage to maintain the state of the navbar even after reload
+      localStorage.setItem("toggleValue", JSON.stringify({ toggled: value }));
+      this.toggled = JSON.parse(localStorage.getItem("toggleValue")).toggled;
     },
   },
 };
