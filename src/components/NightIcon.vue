@@ -1,6 +1,4 @@
 <template>
-  <!-- (c) ammap.com | SVG weather icons -->
-
   <svg
     version="1.1"
     width="64"
@@ -14,25 +12,6 @@
     xmlns="http://www.w3.org/2000/svg"
     xmlns:svg="http://www.w3.org/2000/svg"
   >
-    <sodipodi:namedview
-      id="namedview38"
-      pagecolor="#505050"
-      bordercolor="#eeeeee"
-      borderopacity="1"
-      inkscape:pageshadow="0"
-      inkscape:pageopacity="0"
-      inkscape:pagecheckerboard="0"
-      showgrid="false"
-      inkscape:zoom="11.234375"
-      inkscape:cx="17.045897"
-      inkscape:cy="33.06815"
-      inkscape:window-width="1296"
-      inkscape:window-height="969"
-      inkscape:window-x="0"
-      inkscape:window-y="25"
-      inkscape:window-maximized="0"
-      inkscape:current-layer="svg36"
-    />
     <defs id="defs19">
       <filter
         id="blur"
@@ -94,8 +73,6 @@
 
 <script>
 export default {
-  name: "Night",
+  name: "NightIcon",
 };
 </script>
-
-<style></style>

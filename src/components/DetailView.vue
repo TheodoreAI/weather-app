@@ -5,7 +5,7 @@
   >
     <div class="row">
       <div class="col"><SunnyDay /></div>
-      <div class="col"><Night /></div>
+      <div class="col"><NightIcon /></div>
     </div>
 
     <div v-if="this.camera != ''">
@@ -51,13 +51,13 @@
 <script>
 import { mapActions } from "vuex";
 import SunnyDay from "./SunnyDay.vue";
-import Night from "./NightComponent.vue";
+import NightIcon from "./NightIcon.vue";
 
 import Modal from "@/components/Modal.vue";
 
 export default {
   name: "DetailView",
-  components: { SunnyDay, Modal, Night },
+  components: { SunnyDay, Modal, NightIcon },
   data() {
     return {
       solNumber: this.sol,
