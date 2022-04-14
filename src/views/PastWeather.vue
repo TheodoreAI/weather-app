@@ -1,7 +1,7 @@
 <template>
   <div class="header" id="headerPastWeather">
     <div class="gap-3">
-      <h1 style="margin-bottom: 400px">Mars Gale Crater Weather</h1>
+      <h1 style="margin-bottom: 400px">Gale Crater Weather</h1>
       <form class="mx-auto w-25">
         <select
           class="form-select"

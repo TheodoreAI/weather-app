@@ -4,7 +4,7 @@
       <div class="card">
         <div class="card-header">
           <button type="button" class="btn btn-danger" @click="close">
-            Close Modal
+            Close
           </button>
         </div>
         <div class="card-body">

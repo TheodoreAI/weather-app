@@ -10,7 +10,7 @@
         <router-link
           to="/current-weather"
           class="nav-link btn btn-primary-outline"
-          >Current Weather</router-link
+          >Mars Images</router-link
         >
       </li>
     </ul>

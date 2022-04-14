@@ -6,7 +6,6 @@ import marsLatest from "@/resources/marsLatest.json";
 export default createStore({
   state: {
     weatherData: marsLatest,
-    images: JSON.parse(localStorage.getItem("IMAGES")),
     searchResults: [],
   },
   mutations: {
@@ -28,7 +27,6 @@ export default createStore({
           sol.camera = objects.camera;
         }
       });
-      console.log(state.weatherData);
     },
     INIT_SEARCH_RESULTS: (state, value) => {
       state.searchResults = value;
@@ -41,7 +39,6 @@ export default createStore({
       return obj;
     },
     getSearchResults(state) {
-      // return the object
       return state.searchQuery;
     },
   },
@@ -96,7 +93,6 @@ export default createStore({
               obj.img =
                 "https://1080motion.com/wp-content/uploads/2018/06/NoImageFound.jpg.png";
               obj.camera = "No Image Found";
-              console.log("No first image");
               commit("ADD_TO_WEATHERDATA", obj);
             }
           } else {
@@ -106,11 +102,9 @@ export default createStore({
         commit("INITIALIZE_STORAGE", obj);
       }
     },
-
     searchImages({ commit }, queryObj) {
       let api_key = process.env.VUE_APP_NASA_API;
       callAPI(api_key, queryObj, commit);
     },
   },
-  modules: {},
 });

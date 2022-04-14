@@ -22,7 +22,7 @@
       <footer class="modal-footer">
         <p name="footer">{{ this.date }}</p>
         <button type="button" class="btn btn-danger" @click="close">
-          Close Modal
+          Close
         </button>
       </footer>
     </div>
