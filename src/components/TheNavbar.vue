@@ -22,19 +22,6 @@
 <script>
 export default {
   name: "TheNavbar",
-  data() {
-    return {
-      toggled: true,
-    };
-  },
-
-  methods: {
-    setChosen(value) {
-      // Leveraging localStorage to maintain the state of the navbar even after reload
-
-      this.toggled = value;
-    },
-  },
 };
 </script>
 
