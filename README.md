@@ -138,3 +138,5 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 [NASA MARS Rover API](https://api.nasa.gov/)
 
 [NASA Curiosity Selfie JPL](https://www.jpl.nasa.gov/images/pia22486-curiositys-dusty-selfie)
+
+[Modal component in Vue] (https://www.digitalocean.com/community/tutorials/vuejs-vue-modal-component)
