@@ -79,7 +79,7 @@
 </template>
 
 <script>
-import { mapActions, mapGetters, mapState } from "vuex";
+import { mapActions, mapState } from "vuex";
 import ImageModal from "@/components/ImageModal.vue";
 export default {
   components: { ImageModal },
@@ -100,7 +100,6 @@ export default {
   },
 
   computed: {
-    ...mapGetters(["getSearchResults"]),
     ...mapState(["searchResults"]),
   },
   watch: {

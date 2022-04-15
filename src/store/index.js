@@ -32,18 +32,9 @@ export default createStore({
       state.searchResults = value;
     },
   },
-  getters: {
-    getImages(state) {
-      // You need to JSON.parse the localStorage object because it was stored using JSON.stringify (using string "serialization")
-      let obj = JSON.parse(state.images);
-      return obj;
-    },
-    getSearchResults(state) {
-      return state.searchQuery;
-    },
-  },
   actions: {
     // Actions are connected via dispatch --> something new
+    // Past Weather Section -
     addImages: ({ state, dispatch }, camera) => {
       let api_key = process.env.VUE_APP_NASA_API;
       let images = [];
@@ -102,6 +93,7 @@ export default createStore({
         commit("INITIALIZE_STORAGE", obj);
       }
     },
+    // Image Library Section -
     searchImages({ commit }, queryObj) {
       let api_key = process.env.VUE_APP_NASA_API;
       callAPI(api_key, queryObj, commit);
