@@ -79,6 +79,7 @@
 </template>
 
 <script>
+// The intersection Observer API to load images
 import { mapActions, mapState } from "vuex";
 import ImageModal from "@/components/ImageModal.vue";
 export default {

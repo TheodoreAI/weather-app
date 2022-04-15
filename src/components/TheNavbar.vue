@@ -20,6 +20,7 @@
 </template>
 
 <script>
+// Try: toggledObject?.toggled? || {} to init localStorage and make sure its run on created()
 export default {
   name: "TheNavbar",
 };

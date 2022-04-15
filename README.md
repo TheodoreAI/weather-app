@@ -116,16 +116,9 @@ Learned how localStorage _might_ work with Vuex
 
 - Building a search-like functionality using a database, not accepting strings to avoid cross site scripting. (Only accept numbers for the sols.)
 
-### Day 6
+### Presentation and Future Development
 
-### What I will do -
-
-- []
-- []
-
-### Any Issues -
-
-### What I learned -
+- Continue by addressing issues
 
 ### Customize configuration
 
